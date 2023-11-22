@@ -1,0 +1,54 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+        <form method="POST">
+            {% csrf_token %}
+            <div class="modal fade show" id="exampleModalCenter" style="display: block;" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+                    role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Modifier le Livre </h5>
+                            <button type="button" class="close" data-bs-dismiss="modal"
+                                aria-label="Close">
+                                <i data-feather="x"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <label>Auteur :</label>
+                            <div class="form-group has-icon-left">
+                                <div class="position-relative">
+                                    <input type="text" class="form-control" name="auteur" value="{{data.id_aut.auteur}}" placeholder="Nom complet de l'auteur"
+                                        id="first-name-icon">
+                                    <div class="form-control-icon">
+                                        <i class="bi bi-person"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            {{form}}
+                            <label>Volume :</label>
+                            <input type="text" class="form-control" name="volume" value="{{data.volume}}" placeholder="Volume">
+                             
+                        </div>
+                        <div class="modal-footer">
+                            <a href="{% url 'livre' data.id_rayon.id_rayon %}">
+                                <button type="button" class="btn btn-light-secondary"
+                                    data-bs-dismiss="modal">
+                                    <i class="bx bx-x d-block d-sm-none"></i>
+                                    <span class="d-none d-sm-block">Annuler</span>
+                                </button>
+                            </a>
+                            <button type="submit" class="btn btn-primary ml-1" data-bs-dismiss="modal">
+                                <i class="bx bx-check d-block d-sm-none"></i>
+                            
+                                <span class="d-none d-sm-block">Ajouter</span> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+{% endblock %}

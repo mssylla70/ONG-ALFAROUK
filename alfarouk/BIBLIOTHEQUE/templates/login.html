@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BIBLIOTHÈQUE-ALFAROUK</title>
+        
+        <link rel="stylesheet" href="{% static 'assets/css/main/app.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/main/app-dark.css' %}">
+        <link rel="shortcut icon" href="{% static 'assets/images/logo/favicon.svg" type="image/x-icon' %}">
+        <link rel="shortcut icon" href="{% static 'assets/images/logo/favicon.png" type="image/png' %}">        
+        <link rel="stylesheet" href="{% static 'assets/css/shared/iconly.css' %}">      
+        <link rel="stylesheet" href="{% static 'assets/extensions/simple-datatables/style.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/pages/simple-datatables.css' %}">
+    
+        <link rel="stylesheet" href="{% static 'assets/extensions/@fortawesome/fontawesome-free/css/all.min.css' %}">
+
+        <style>
+            .fontawesome-icons {
+                text-align: center;
+            }
+        
+            article dl {
+                background-color: rgba(0, 0, 0, .02);
+                padding: 20px;
+            }
+        
+            .fontawesome-icons .the-icon {
+                font-size: 24px;
+                line-height: 1.2;
+            }
+        </style>
+
+    </head>
+    <form method="POST" class="form form-horizontal">
+        {% csrf_token %}
+        <div class="card">
+            <div class="card-content">
+                <div class="card-body">
+                    <!-- Vertically Centered modal Modal -->
+                    <div class="modal fade show" style="display: block;" id="exampleModalCenter" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+                            role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalCenterTitle">Identifiez vous s'il vous plaît ! </h5>
+                                    <a href="{% url 'home' %}" >
+                                        <i class="bi bi-x"></i>
+
+                                </a>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group has-icon-left">
+                                        <div class="position-relative">
+                                            <input type="text" name="username" class="form-control" placeholder="Nom d'utilisateur" id="first-name-icon">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-person"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group has-icon-left">
+                                        <div class="position-relative">
+                                            <input type="password" name="password" class="form-control" placeholder="mot de passe" id="first-name-icon">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-lock"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="{% url 'home' %}" class="btn btn-light-secondary">
+                                        <i class="bx bx-x d-block d-sm-none"></i>
+                                        <span class="d-none d-sm-block">Annuler</span>
+                                    </a>
+                                    <button type="submit" class="btn btn-primary ml-1" data-bs-dismiss="modal">connecter</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script src="{% static 'assets/js/bootstrap.js' %}"></script>
+    <script src="{% static 'assets/js/app.js' %}"></script>
+
+    <!-- Need: Apexcharts -->
+    <script src="{% static 'assets/extensions/apexcharts/apexcharts.min.js' %}"></script>
+    <script src="{% static 'assets/js/pages/dashboard.js' %}"></script>
+
+    <script src="{% static 'assets/extensions/simple-datatables/umd/simple-datatables.js' %}"></script>
+    <script src="{% static 'assets/js/pages/simple-datatables.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section id="basic-horizontal-layouts">
+        <div class="row match-height">
+            <div class="col-md-6 col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Enregistrer un nouveau type</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            <form method="post" class="form form-horizontal">
+                                {% csrf_token %}
+                                
+                                <div class="form-body">
+                                    <div class="row">
+                                        {% for field in form %}
+                                        <div class="col-md-2">
+                                            <label>{{ field.label_tag }}</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group has-icon-left">
+                                                <div class="position-relative">
+                                                    {{ field }}
+                                                    <div class="form-control-icon">
+                                                        <i class="bi bi-rayon"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                    <div class="row-4">
+                                        <div> &nbsp;</div>
+                                        <div> &nbsp;</div>
+                                    </div>
+                                    <div class="col-12 d-flex justify-content-end">
+                                        <button type="submit" class="btn btn-primary me-1 mb-1">Enregistrer</button>
+                                        <button type="reset"
+                                                class="btn btn-light-secondary me-1 mb-1"><a href="{% url 'alfarouk' %}">Annuler</a></button>
+                                    </div>
+                                    
+                                </div>
+                            </form>
+                            {% if message1 %}
+                                <span>{{ message1 }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% endblock %}

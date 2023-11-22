@@ -1,0 +1,36 @@
+main{
+    text-align: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+#formulaire{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    color: rgb(187, 235, 14);
+    font-size: 2rem;
+    background-color: hwb(290 5% 2% / 0.068);
+    padding: 3%;
+    border-radius: 1rem;
+    margin-left: 20%;
+    margin-top: 4%;
+}
+.log{
+    margin-top: 4rem;
+    height: .5rem;
+    padding: 1%;
+}
+#submit{
+    width: 25%;
+    background-color: white;
+    color: rgba(252, 123, 2, 0.952);
+    margin-top: 4rem;
+    padding: 1%;
+    font-size: 1.5rem;
+    margin-left: 35%
+}
+#submit:hover{
+    width: 27%;
+    background-color: green;
+}
